@@ -16,6 +16,14 @@ class Container extends React.Component {
 			};
 		});
 	}
+	editNote = (value, place) => {
+	console.log("coming here");
+	const tempState= this.state;
+	const tempNote = this.state.notes[place];
+	tempNote.name = value;
+	tempState.notes[place] = tempNote;
+	this.setState({notes: tempState.notes});
+	}
  	render() {
  		console.log("State", this.state); //logging state to see state changes
  		return(
@@ -30,6 +38,7 @@ class Container extends React.Component {
  								key = {place}
  								name = {note.name}
  								place = {place}
+								editNote = {this.editNote}
  							/>
  							)
  						)
