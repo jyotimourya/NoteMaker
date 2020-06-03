@@ -20,9 +20,8 @@ class AddNotes extends React.Component {
     this.props.addNote(note); //using this.props to return value
     this.setState({ name: "" });
   };
-
   render() {
-    console.log("props", this.props.addNote);
+    //console.log("props", this.props.addNote);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

@@ -20,8 +20,8 @@ class Note extends React.Component {
 	
   render() {
 		const { name } = this.state;
-		const { editNote, place } = this.props;
-		//console.log(this.state);
+		const { deleteNote,editNote, place } = this.props;
+		console.log(this.state);
 		return(
 			<div>
 				<input
@@ -30,7 +30,7 @@ class Note extends React.Component {
 					onChange={this.handleChange}
 					onBlur={() => editNote(name,place)}
 				/>
-				<button>X</button>
+				<button onClick={() => deleteNote(name,place)}>X</button>
 			</div>
 		);
 	}
